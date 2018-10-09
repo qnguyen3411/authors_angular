@@ -1,0 +1,14 @@
+<a href="#" [routerLink]="['/']">Home</a>
+<p>
+  add works!
+</p>
+<form (submit)="postNewAuthor()" class="form-group col-4">
+  <p *ngIf="error" class="text-danger">{{error}}</p>
+  Name:
+  <input class="form-control mb-2" 
+    type="text" 
+    name="postData['name']"
+    [(ngModel)]="postData['name']">
+  <button [routerLink]="['/']" class="btn btn-dark mr-2">Cancel</button>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form>

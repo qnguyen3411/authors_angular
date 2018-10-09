@@ -1,0 +1,22 @@
+<a href="#" [routerLink]="['/add']">Add an author</a>
+<p>
+  index works!
+</p>
+<table class="col-5 ml-2 table">
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let author of authors">
+      <td>{{ author['name'] }}</td>
+      <td>
+        <button [routerLink]="['/edit/' + author['_id']]">edit</button>
+        <button (click)="deleteAuthor(author['_id'])">delete</button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
